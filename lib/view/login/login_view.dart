@@ -1,11 +1,10 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_instance/get_instance.dart';
 import 'package:model_viewmodel_view_practice/res/components/roundedbtn.dart';
 import 'package:model_viewmodel_view_practice/utils/utils.dart';
-import 'package:model_viewmodel_view_practice/view_model/services/controller/login_view_model.dart';
+import 'package:model_viewmodel_view_practice/view_model/services/controller/login/login_view_model.dart';
+
 
 class Loginview extends StatefulWidget {
   const Loginview({super.key});
@@ -22,7 +21,7 @@ class _LoginviewState extends State<Loginview> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
+        centerTitle: true,    
         title: const Text('login'),
         automaticallyImplyLeading: false,
       ),
@@ -51,7 +50,7 @@ class _LoginviewState extends State<Loginview> {
                     decoration: const InputDecoration(
                         hintText: 'Enter email', border: OutlineInputBorder()),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 40,
                   ),
                   TextFormField(
@@ -63,7 +62,8 @@ class _LoginviewState extends State<Loginview> {
                       Utils.snackBar('password', 'plese enter the pasword');
                     },
                     decoration: const InputDecoration(
-                        hintText: 'Enter password', border: OutlineInputBorder()),
+                        hintText: 'Enter password',
+                        border: OutlineInputBorder()),
                   ),
                 ],
               ),
@@ -75,9 +75,10 @@ class _LoginviewState extends State<Loginview> {
                 width: 200,
                 title: 'login',
                 onPress: () {
-                  if (_formkey.currentState!.validate()) {
-                    loginViewModel.loginApi();
-                  }
+                  // if (_formkey.currentState!.validate()) {
+
+                  // }
+                  loginViewModel.loginApimain();
                 })
           ],
         ),
