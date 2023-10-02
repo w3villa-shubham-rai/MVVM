@@ -5,7 +5,7 @@ class LoginRepositry {
   final _apiservice = NetworkApiServices();
 
   Future<dynamic> loginApi(var data) async {
-    dynamic responsce = _apiservice.postApi(data, AppUrl.loginApi);
+    dynamic responsce =await _apiservice.postApi(data, AppUrl.loginApi);
     return responsce;
   } 
 }
